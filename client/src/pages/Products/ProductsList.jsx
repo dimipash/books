@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ProductCard } from "../../components/Elements/ProductCard";
+import { ProductCard } from "../../components";
 import { FilterBar } from "./components/FilterBar";
 
 export const ProductsList = () => {

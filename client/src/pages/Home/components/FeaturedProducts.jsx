@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ProductCard } from "../../../components/Elements/ProductCard";
+import { ProductCard } from "../../../components/";
 
 export const FeaturedProducts = () => {
     const [products, setProducts] = useState([]);
@@ -22,7 +22,11 @@ export const FeaturedProducts = () => {
             </h1>
             <div className="flex flex-wrap justify-center lg:flex-row">
                 {products.map((product) => (
-                    <ProductCard key={product.id} product={product} className="m-2" />
+                    <ProductCard
+                        key={product.id}
+                        product={product}
+                        className="m-2"
+                    />
                 ))}
             </div>
         </section>

@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/ebook.svg";
+
 export const Header = () => {
     return (
         <header>
@@ -15,8 +17,6 @@ export const Header = () => {
                         </span>
                     </Link>
                     <div className="flex items-center">
-                        <span className="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi-gear-fill"></span>
-                        <span className="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi-search"></span>
                         <Link
                             to="/cart"
                             className="text-gray-700 dark:text-white mr-5"
