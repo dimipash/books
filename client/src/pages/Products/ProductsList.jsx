@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { useTitle } from "../../hooks/useTitle";
 import { ProductCard } from "../../components";
 import { FilterBar } from "./components/FilterBar";
 
-export const ProductsList = () => {
+
+export const ProductsList = () => {    
     const [show, setShow] = useState(false);
     const [products, setProducts] = useState([]);
+    useTitle("All eBooks");
 
     useEffect(() => {
         async function fetchProducts() {
