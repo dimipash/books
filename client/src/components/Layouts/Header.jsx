@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/ebook.svg";
+import { DropdownLoggedOut, DropdownLoggedIn } from "../index";
 
 export const Header = () => {
+    const [dropdown, setDropdown] = useState(false);
     return (
         <header>
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -27,10 +29,14 @@ export const Header = () => {
                                 </span>
                             </span>
                         </Link>
-                        <span className="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi-person-circle"></span>
+                        <span
+                            onClick={() => setDropdown(!dropdown)}
+                            className="cursor-pointer text-xl text-gray-700 dark:text-white mr-5 bi bi-person-circle"
+                        ></span>
                     </div>
                 </div>
             </nav>
+            {dropdown && <DropdownLoggedOut />}
         </header>
     );
 };
