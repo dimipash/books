@@ -22,6 +22,11 @@ export const Register = () => {
         );
         const data = await response.json();
         data.accessToken ? navigate("/products") : toast.error(data.message);
+
+        if (data.accessToken) {
+            sessionStorage.setItem("token", JSON.stringify(data.accessToken));
+            sessionStorage.setItem("id", JSON.stringify(data._id));
+        }
     }
 
     return (

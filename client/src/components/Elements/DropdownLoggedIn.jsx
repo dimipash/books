@@ -1,6 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const DropdownLoggedIn = () => {
+    const navigate = useNavigate();
+    function handleLogout() {
+        sessionStorage.removeItem("token");
+        sessionStorage.removeItem("id");
+        navigate("/");
+    }
     return (
         <div
             id="dropdownAvatar"
@@ -31,7 +37,10 @@ export const DropdownLoggedIn = () => {
                 </li>
             </ul>
             <div className="py-1">
-                <span className="cursor-pointer block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">
+                <span
+                    onClick={handleLogout}
+                    className="cursor-pointer block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                >
                     Log out
                 </span>
             </div>
