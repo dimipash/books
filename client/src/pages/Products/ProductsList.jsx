@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTitle } from "../../hooks/useTitle";
 import { ProductCard } from "../../components";
-import { FilterBar } from "./components/FilterBar";
+
 
 export const ProductsList = () => {
     const [products, setProducts] = useState([]);

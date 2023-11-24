@@ -20,7 +20,7 @@ export const DropdownLoggedOut = () => {
                 </li>
                 <li>
                     <Link
-                        href="/login"
+                        to="/login"
                         className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                         Login
@@ -28,7 +28,7 @@ export const DropdownLoggedOut = () => {
                 </li>
                 <li>
                     <Link
-                        href="/register"
+                        to="/register"
                         className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
                     >
                         Register

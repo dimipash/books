@@ -3,10 +3,9 @@ import { useParams } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
 import { Rating } from "../components";
 
-
-export const ProductDetail = () => {    
+export const ProductDetail = () => {
     const [product, setProduct] = useState({});
-    const {id} = useParams();
+    const { id } = useParams();
     useTitle(product.name);
 
     useEffect(() => {
@@ -36,7 +35,7 @@ export const ProductDetail = () => {
                             src={product.poster}
                             alt={product.name}
                         />
-                    </div> 
+                    </div>
                     <div className="max-w-xl my-3">
                         <p className="text-3xl font-bold text-gray-900 dark:text-slate-200">
                             <span className="mr-1">$</span>
