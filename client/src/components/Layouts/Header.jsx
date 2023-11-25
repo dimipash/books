@@ -6,6 +6,7 @@ import { DropdownLoggedOut, DropdownLoggedIn } from "../index";
 export const Header = () => {
     const [dropdown, setDropdown] = useState(false);
     const token = JSON.parse(sessionStorage.getItem("token"));
+
     return (
         <header>
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
@@ -37,7 +38,7 @@ export const Header = () => {
                     </div>
                 </div>
             </nav>
-            {dropdown && ( token ? <DropdownLoggedIn /> : <DropdownLoggedOut />)}
+            {dropdown && ( token ? <DropdownLoggedIn setDropdown={setDropdown} /> : <DropdownLoggedOut setDropdown={setDropdown} />)}
         </header>
     );
 };
