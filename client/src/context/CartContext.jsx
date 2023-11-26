@@ -33,6 +33,7 @@ export const CartProvider = ({ children }) => {
             type: "REMOVE_FROM_CART",
             payload: {
                 products: updatedList,
+                total: updatedTotal,
             },
         });
     }

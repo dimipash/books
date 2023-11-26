@@ -20,7 +20,7 @@ export const cartReducer = (state, action) => {
                 cartList: [payload.products],
                 total: payload.total,
             };
-        
+
         default:
             throw new Error("No case found!");
     }

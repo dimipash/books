@@ -2,8 +2,10 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/ebook.svg";
 import { DropdownLoggedOut, DropdownLoggedIn } from "../index";
+import { useCart } from "../../context";
 
 export const Header = () => {
+    const { cartList } = useCart();
     const [dropdown, setDropdown] = useState(false);
     const token = JSON.parse(sessionStorage.getItem("token"));
 
@@ -26,10 +28,11 @@ export const Header = () => {
                             className="text-gray-700 dark:text-white mr-5"
                         >
                             <span className="text-2xl bi bi-cart-fill relative">
-                                <span className="text-black text-sm absolute -top-1 left-2.5 bg-rose-500 px-1 rounded-full">
-                                    0
+                                <span className="absolute -top-1 left-2.5 text-white bg-red-500 text-sm px-1 rounded-full text-rose-500">
+                                    {cartList.length}
                                 </span>
                             </span>
+                           
                         </Link>
                         <span
                             onClick={() => setDropdown(!dropdown)}
@@ -38,7 +41,12 @@ export const Header = () => {
                     </div>
                 </div>
             </nav>
-            {dropdown && ( token ? <DropdownLoggedIn setDropdown={setDropdown} /> : <DropdownLoggedOut setDropdown={setDropdown} />)}
+            {dropdown &&
+                (token ? (
+                    <DropdownLoggedIn setDropdown={setDropdown} />
+                ) : (
+                    <DropdownLoggedOut setDropdown={setDropdown} />
+                ))}
         </header>
     );
 };
