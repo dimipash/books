@@ -84,7 +84,14 @@ export const ProductDetail = () => {
                             {!inCart && (
                                 <button
                                     onClick={() => addToCart(product)}
-                                    className={`inline-flex items-center py-2 px-5 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800`}
+                                    className={`inline-flex items-center py-2 px-5 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 ${
+                                        product.in_stock
+                                            ? ""
+                                            : "cursor-not-allowed"
+                                    }`}
+                                    disabled={
+                                        product.in_stock ? "" : "disabled"
+                                    }
                                 >
                                     Add To Cart{" "}
                                     <i className="ml-1 bi bi-plus-lg"></i>
@@ -93,7 +100,11 @@ export const ProductDetail = () => {
                             {inCart && (
                                 <button
                                     onClick={() => removeFromCart(product)}
-                                    className={`inline-flex items-center py-2 px-5 text-lg font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800`}
+                                    className={`inline-flex items-center py-2 px-5 text-lg font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-800 ${
+                                        product.in_stock
+                                            ? ""
+                                            : "cursor-not-allowed"
+                                    }`}
                                     disabled={
                                         product.in_stock ? "" : "disabled"
                                     }
