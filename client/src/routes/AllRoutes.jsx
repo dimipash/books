@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import {
     HomePage,
     ProductsList,
@@ -7,8 +7,10 @@ import {
     Register,
     CartPage,
 } from "../pages";
+import { ProtectedRoute } from "./ProtectedRoute";
 
 export const AllRoutes = () => {
+    
     return (
         <>
             <Routes>
@@ -19,7 +21,14 @@ export const AllRoutes = () => {
                 <Route path="login" element={<Login />} />
                 <Route path="register" element={<Register />} />
 
-                <Route path="cart" element={<CartPage />} />
+                <Route
+                    path="cart"
+                    element={
+                        <ProtectedRoute>
+                            <CartPage />
+                        </ProtectedRoute>
+                    }
+                />
             </Routes>
         </>
     );
