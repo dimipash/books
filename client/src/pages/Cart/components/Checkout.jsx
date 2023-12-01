@@ -1,7 +1,44 @@
 import { useCart } from "../../../context";
+import { useNavigate } from "react-router-dom";
 
 export const Checkout = ({ setCheckout }) => {
-    const { total } = useCart();
+    const { cartList, total, clearCart } = useCart();
+
+    const navigate = useNavigate();
+
+    const token = JSON.parse(sessionStorage.getItem("token"));
+    const id = JSON.parse(sessionStorage.getItem("id"));
+    const email = JSON.parse(sessionStorage.getItem("email"));
+
+    async function handleOrderSubmit(event) {
+        event.preventDefault();
+
+        const order = {
+            cartList: cartList,
+            amount_paid: total,
+            quantiy: cartList.length,
+            user: {
+                name: event.target.name.value,
+                email: email,
+                id: id,
+            },
+        };
+
+        const response = await fetch("http://localhost:3030/data/orders", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "X-Authorization": token,
+            },
+            body: JSON.stringify(order),
+        });
+
+        const data = await response.json();
+
+        clearCart();
+
+        navigate("/");
+    }
 
     return (
         <section>
@@ -41,21 +78,23 @@ export const Checkout = ({ setCheckout }) => {
                                 <i className="bi bi-credit-card mr-2"></i>CARD
                                 PAYMENT
                             </h3>
-                            <form className="space-y-6">
+
+                            <form
+                                onSubmit={handleOrderSubmit}
+                                className="space-y-6"
+                            >
                                 <div>
                                     <label
                                         htmlFor="name"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                     >
-                                        Name:
+                                        Name on card:
                                     </label>
                                     <input
                                         type="text"
                                         name="name"
                                         id="name"
                                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:value-gray-400 dark:text-white"
-                                        value="Ivo Ivanov"
-                                        disabled
                                         required=""
                                     />
                                 </div>
@@ -71,8 +110,8 @@ export const Checkout = ({ setCheckout }) => {
                                         name="email"
                                         id="email"
                                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:value-gray-400 dark:text-white"
-                                        value="ivanov@abv.bg"
-                                        disabled
+                                        value={email}
+                                        disabled={true}
                                         required=""
                                     />
                                 </div>
