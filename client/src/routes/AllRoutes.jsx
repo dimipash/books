@@ -7,11 +7,11 @@ import {
     Register,
     CartPage,
     OrderPage,
+    DashboardPage,
 } from "../pages";
 import { ProtectedRoute } from "./ProtectedRoute";
 
 export const AllRoutes = () => {
-    
     return (
         <>
             <Routes>
@@ -35,6 +35,14 @@ export const AllRoutes = () => {
                     element={
                         <ProtectedRoute>
                             <OrderPage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="dashboard"
+                    element={
+                        <ProtectedRoute>
+                            <DashboardPage />
                         </ProtectedRoute>
                     }
                 />
