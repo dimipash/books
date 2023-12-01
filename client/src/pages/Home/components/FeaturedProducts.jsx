@@ -7,10 +7,13 @@ export const FeaturedProducts = () => {
     useEffect(() => {
         async function fetchProducts() {
             const response = await fetch(
-                "http://localhost:3030/jsonstore/books/featured_products"
+                "http://localhost:3030/jsonstore/featured_books/"
             );
             const data = await response.json();
-            setProducts(data);
+
+            const products = Object.values(data);
+
+            setProducts(products);
         }
         fetchProducts();
     }, []);

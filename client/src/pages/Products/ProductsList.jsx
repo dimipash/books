@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useTitle } from "../../hooks/useTitle";
 import { ProductCard } from "../../components";
 
-
 export const ProductsList = () => {
     const [products, setProducts] = useState([]);
     useTitle("All eBooks");
@@ -10,10 +9,11 @@ export const ProductsList = () => {
     useEffect(() => {
         async function fetchProducts() {
             const response = await fetch(
-                "http://localhost:3030/jsonstore/books/products"
+                "http://localhost:3030/jsonstore/books/"
             );
             const data = await response.json();
-            setProducts(data);
+            const products = Object.values(data);
+            setProducts(products);
         }
         fetchProducts();
     }, []);

@@ -1261,7 +1261,7 @@
         },
         sessions: {},
     };
-    var seedData = {        
+    var seedData = {
         movies: {
             "1240549d-f0e0-497e-ab99-eb8f703713d7": {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
@@ -1291,8 +1291,10 @@
                 _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909",
             },
         },
+        
         orders: {},
     };
+    
     var settings = {
         identity: identity,
         protectedData: protectedData,

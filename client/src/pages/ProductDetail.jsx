@@ -14,7 +14,7 @@ export const ProductDetail = () => {
     useEffect(() => {
         async function fetchProducts() {
             const response = await fetch(
-                `http://localhost:3030/jsonstore/books/products/${id}`
+                `http://localhost:3030/jsonstore/books/${id}`
             );
             const data = await response.json();
             setProduct(data);
