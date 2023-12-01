@@ -1,15 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 
-
 export const DropdownLoggedIn = ({ setDropdown }) => {
     const email = JSON.parse(sessionStorage.getItem("email"));
-    
+
     const navigate = useNavigate();
     function handleLogout() {
-        sessionStorage.removeItem("token");
-        sessionStorage.removeItem("id");
-        sessionStorage.removeItem("email");
-        
+        sessionStorage.clear();
 
         setDropdown(false);
         navigate("/");
