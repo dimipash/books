@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useTitle } from "../../hooks/useTitle";
+
 import { ProductCard } from "../../components";
+
+import { getProductList } from "../../services";
 
 export const ProductsList = () => {
     const [products, setProducts] = useState([]);
@@ -8,12 +11,9 @@ export const ProductsList = () => {
 
     useEffect(() => {
         async function fetchProducts() {
-            const response = await fetch(
-                "http://localhost:3030/jsonstore/books/"
-            );
-            const data = await response.json();
-            const products = Object.values(data);
-            setProducts(products);
+            
+            const data = await getProductList();
+            setProducts(data);
         }
         fetchProducts();
     }, []);

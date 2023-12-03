@@ -20,7 +20,13 @@ export const ProductCard = ({ product }) => {
     } = product;
 
     useEffect(() => {
-        const productInCart = cartList.find((item) => item.id === product.id);
+        const updatedCartList = cartList || [];
+
+        const productInCart = updatedCartList.find(
+            (item) => item.id === product.id
+        );
+
+        // const productInCart = cartList.find((item) => item.id === product.id);
 
         if (productInCart) {
             setInCart(true);

@@ -28,7 +28,7 @@ export const CartProvider = ({ children }) => {
         const updatedList = state.cartList.filter(
             (item) => item.id !== product.id
         );
-        const updatedTotal = state.total - product.price;    
+        const updatedTotal = state.total - product.price;
         dispatch({
             type: "REMOVE_FROM_CART",
             payload: {
@@ -42,7 +42,7 @@ export const CartProvider = ({ children }) => {
         dispatch({
             type: "CLEAR_CART",
             payload: {
-                products: [],
+                products: "",
                 total: 0,
             },
         });

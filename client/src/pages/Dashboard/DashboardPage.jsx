@@ -1,8 +1,20 @@
+import { useEffect, useState } from "react";
 import { DashboardCard } from "./components/DashboardCard";
 import { DashboardEmpty } from "./components/DashboardEmpty";
+import { getUserOrders } from "../../services";
 
 export const DashboardPage = () => {
-    const orders = [];
+    const [orders, setOrders] = useState([]);
+
+    
+
+    useEffect(() => {
+        async function fetchOrders() {
+            const data = await getUserOrders();             
+            setOrders(data);
+        }
+        fetchOrders();
+    }, []);
 
     return (
         <main>
@@ -13,12 +25,13 @@ export const DashboardPage = () => {
             </section>
 
             <section>
-                {orders.length && orders.map((order) => <DashboardCard key={order.id} order={order} />)}
+                {orders &&
+                    orders.map((order) => (
+                        <DashboardCard key={order._id} order={order} />
+                    ))}
             </section>
 
-            <section>
-                {!orders.length && <DashboardEmpty />}
-            </section>
+            <section>{!orders.length && <DashboardEmpty />}</section>
         </main>
     );
 };

@@ -17,7 +17,7 @@ export const cartReducer = (state, action) => {
         case "CLEAR_CART":
             return {
                 ...state,
-                cartList: [payload.products],
+                cartList: payload.products,
                 total: payload.total,
             };
 

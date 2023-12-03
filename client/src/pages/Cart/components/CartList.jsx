@@ -5,7 +5,6 @@ import { useCart } from "../../../context";
 
 export const CartList = () => {
     const [checkout, setCheckout] = useState(false);
-
     const { cartList, total } = useCart();
 
     return (
@@ -18,6 +17,7 @@ export const CartList = () => {
 
             <section>
                 {cartList.map((product) => (
+                   
                     <CartCard key={product.id} product={product} />
                 ))}
             </section>

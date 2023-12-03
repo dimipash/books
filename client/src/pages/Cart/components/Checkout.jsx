@@ -1,5 +1,6 @@
 import { useCart } from "../../../context";
 import { useNavigate } from "react-router-dom";
+import { createOrder } from "../../../services";
 
 export const Checkout = ({ setCheckout }) => {
     const { cartList, total, clearCart } = useCart();
@@ -10,32 +11,13 @@ export const Checkout = ({ setCheckout }) => {
     const id = JSON.parse(sessionStorage.getItem("id"));
     const email = JSON.parse(sessionStorage.getItem("email"));
 
+ 
     async function handleOrderSubmit(event) {
         event.preventDefault();
 
         try {
-            const order = {
-                cartList: cartList,
-                amount_paid: total,
-                quantiy: cartList.length,
-                user: {
-                    name: event.target.name.value,
-                    email: email,
-                    id: id,
-                },
-            };
-
-            const response = await fetch("http://localhost:3030/data/orders", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                    "X-Authorization": token,
-                },
-                body: JSON.stringify(order),
-            });
-
-            const data = await response.json();
-            clearCart();
+            const data = await createOrder(cartList, total);
+            await clearCart();
             navigate("/order-summary", { state: { data: data, status: true } });
         } catch (error) {
             navigate("/order-summary", { state: { status: false } });
