@@ -7,12 +7,16 @@ function getSession() {
 
 export async function getUserOrders() {
     const { token, id, email } = getSession();
-    const response = await fetch(`http://localhost:3030/data/orders`, {
+    const requestOptions = {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
         },
-    });
+    };
+    const response = await fetch(`http://localhost:3030/data/orders`, requestOptions);
+     if (!response.ok) {
+         throw { message: response.statusText, status: response.status };
+     }
     const userOrders = await response.json();
     const data = userOrders.filter((order) => order._ownerId === id);
 
@@ -31,15 +35,18 @@ export async function createOrder(cartList, total) {
             id: id,
         },
     };
-
-    const response = await fetch("http://localhost:3030/data/orders", {
+    const requestOptions = {
         method: "POST",
         headers: {
             "content-type": "application/json",
             "X-Authorization": token,
         },
         body: JSON.stringify(order),
-    });
+    };
+    const response = await fetch("http://localhost:3030/data/orders", requestOptions);
+    if (!response.ok) {
+        throw { message: response.statusText, status: response.status };
+    }
 
     const data = await response.json();
     return data;

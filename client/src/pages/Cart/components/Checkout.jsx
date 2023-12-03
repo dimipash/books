@@ -1,6 +1,7 @@
 import { useCart } from "../../../context";
 import { useNavigate } from "react-router-dom";
 import { createOrder } from "../../../services";
+import { toast } from "react-toastify";
 
 export const Checkout = ({ setCheckout }) => {
     const { cartList, total, clearCart } = useCart();
@@ -20,6 +21,7 @@ export const Checkout = ({ setCheckout }) => {
             await clearCart();
             navigate("/order-summary", { state: { data: data, status: true } });
         } catch (error) {
+            toast.error(error.message);
             navigate("/order-summary", { state: { status: false } });
         }
     }

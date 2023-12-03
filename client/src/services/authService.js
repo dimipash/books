@@ -8,6 +8,9 @@ export async function login(authDetail) {
         "http://localhost:3030/users/login",
         requestOptions
     );
+    if (!response.ok) {
+        throw { message: response.statusText, status: response.status };
+    }
     const data = await response.json();
 
     if (data.accessToken) {
@@ -30,6 +33,9 @@ export async function register(authDetail) {
         "http://localhost:3030/users/register",
         requestOptions
     );
+    if (!response.ok) {
+        throw { message: response.statusText, status: response.status };
+    }
     const data = await response.json();
 
     if (data.accessToken) {

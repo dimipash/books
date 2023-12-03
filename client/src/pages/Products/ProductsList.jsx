@@ -5,15 +5,21 @@ import { ProductCard } from "../../components";
 
 import { getProductList } from "../../services";
 
+import { toast } from "react-toastify";
+
 export const ProductsList = () => {
     const [products, setProducts] = useState([]);
+
     useTitle("All eBooks");
 
     useEffect(() => {
         async function fetchProducts() {
-            
-            const data = await getProductList();
-            setProducts(data);
+            try {
+                const data = await getProductList();
+                setProducts(data);
+            } catch (error) {
+                toast.error(error.message);
+            }
         }
         fetchProducts();
     }, []);
