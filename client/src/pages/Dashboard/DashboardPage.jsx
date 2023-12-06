@@ -7,6 +7,9 @@ import { toast } from "react-toastify";
 
 export const DashboardPage = () => {
     const [orders, setOrders] = useState([]);
+    function updateOrders(updatedOrders) {
+        setOrders(updatedOrders);
+    }
     useTitle("Dashboard");
 
     useEffect(() => {
@@ -24,19 +27,29 @@ export const DashboardPage = () => {
     return (
         <main>
             <section>
-                <p className="text-2xl text-center font-semibold dark:text-slate-100 my-10 underline underline-offset-8">
+                <p className="section-title dark:text-slate-100 underline underline-offset-8">
                     My Dashboard
                 </p>
             </section>
 
-            <section>
+            <section className="dashboard-card-list">
                 {orders &&
                     orders.map((order) => (
-                        <DashboardCard key={order._id} order={order} />
+                        <DashboardCard
+                            key={order._id}
+                            order={order}
+                            onDelete={() =>
+                                updateOrders(
+                                    orders.filter((o) => o._id !== order._id)
+                                )
+                            }
+                        />
                     ))}
             </section>
 
-            <section>{!orders.length && <DashboardEmpty />}</section>
+            <section className="dashboard-empty">
+                {!orders.length && <DashboardEmpty />}
+            </section>
         </main>
     );
 };

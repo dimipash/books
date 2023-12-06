@@ -11,7 +11,10 @@ export const OrderSuccess = ({ data }) => {
             <div className="my-5">
                 <p>Your order is confirmed.</p>
                 <p>Please check your mail ({data.user.email}) for the eBook.</p>
-                <p className="my-5">Payment ID: xyz_123456789</p>
+                <p>
+                    If you have any questions, please email us at{" "}
+                    <span className="">ebooks@example.com</span>
+                </p>
             </div>
             <Link
                 to="/products"
