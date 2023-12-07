@@ -1,28 +1,28 @@
 import { Accordion } from "./Accordion";
 
 export const FAQ = () => {
-    const faqs = [
-        {
-            id: 1,
-            question: "Why should I use CodeBook?",
-            answer: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus earum dicta nesciunt, nulla alias consequuntur cumque incidunt saepe mollitia esse! Magni praesentium delectus excepturi nostrum illo repellendus cum eius neque, aperiam dolores quaerat quis dolore magnam doloremque minus sint nemo qui necessitatibus at. Perspiciatis, corrupti cum labore quos odio porro!",
-        },
-        {
-            id: 2,
-            question: "Can I access my eBook on mobile?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus nobis tempore perferendis qui, quam, atque reprehenderit vero quaerat, assumenda pariatur eveniet. Maxime eaque, neque corrupti ad minus repudiandae consectetur!",
-        },
-        {
-            id: 3,
-            question: "Do you offer refunds?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste dolor deserunt expedita quam fugit et inventore amet pariatur. Animi.",
-        },
-        {
-            id: 4,
-            question: "Do you support Internation payments?",
-            answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste dolor deserunt expedita quam fugit et inventore amet pariatur. Animi.",
-        },
-    ];
+       const faqs = [
+           {
+               id: 1,
+               question: "Why should I use EBooks?",
+               answer: "EBooks are convenient, portable, and environmentally friendly. You can access an entire library wherever you go without carrying heavy books. EBooks also tend to be cheaper than print books.",
+           },
+           {
+               id: 2,
+               question: "Can I access my eBook on mobile?",
+               answer: "Yes, our eBooks can be accessed on both mobile and desktop. You can download the eBook file to your phone or tablet and read it on the go through an eReader app.",
+           },
+           {
+               id: 3,
+               question: "Do you offer refunds?",
+               answer: "Yes, we offer full refunds within 14 days of purchase if you are not satisfied. Simply contact our support team to initiate a return.",
+           },
+           {
+               id: 4,
+               question: "Do you support Internation payments?",
+               answer: "Yes, we accept payments from most major credit cards from countries around the world. If you have any trouble with international payment, contact us for assistance.",
+           },
+       ];
 
     return (
         <section className="my-10 p-7 border rounded dark:border-slate-700 shadow-sm">

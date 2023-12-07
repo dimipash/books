@@ -4,10 +4,8 @@ import { Rating } from "./Rating";
 import { useState, useEffect } from "react";
 
 export const ProductCard = ({ product }) => {
-    const { cartList, addToCart, removeFromCart } = useCart();
-
+    const { cartList = [], addToCart, removeFromCart } = useCart();
     const [inCart, setInCart] = useState(false);
-
     const {
         id,
         name,
@@ -19,21 +17,36 @@ export const ProductCard = ({ product }) => {
         best_seller,
     } = product;
 
-    useEffect(() => {
-        const updatedCartList = cartList || [];
-
-        const productInCart = updatedCartList.find(
-            (item) => item.id === product.id
-        );
-
-        // const productInCart = cartList.find((item) => item.id === product.id);
+useEffect(() => {
+    // Check if cartList is truthy and an array
+    if (cartList?.length) {
+        const productInCart = cartList.find((item) => item.id === product.id);
 
         if (productInCart) {
             setInCart(true);
         } else {
             setInCart(false);
         }
-    }, [cartList, product.id]);
+    } else {
+        setInCart(false);
+    }
+}, [cartList, product.id]);
+
+    // useEffect(() => {
+    //     const updatedCartList = cartList || [];
+
+    //     const productInCart = updatedCartList.find(
+    //         (item) => item.id === product.id
+    //     );
+
+    //     // const productInCart = cartList.find((item) => item.id === product.id);
+
+    //     if (productInCart) {
+    //         setInCart(true);
+    //     } else {
+    //         setInCart(false);
+    //     }
+    // }, [cartList, product.id]);
 
     return (
         <div className="m-2 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">

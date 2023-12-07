@@ -1,7 +1,3 @@
-/* @import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities"; */
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
 
@@ -14,77 +10,5 @@ main {
     max-width: 1280px;
     margin: auto;
     padding: 15px;
-}
-
-/* Resetting some default browser styles */
-body, h1, h2, h3, p, ul, ol, li {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Roboto', sans-serif; /* Choose a suitable font */
-  background-color: #f4f4f4; /* Set a background color */
-  color: #333; /* Set the default text color */
-}
-
-/* Apply a box-sizing border-box to all elements */
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-/* Global container styles */
-main {    
-    min-height: 90vh;
-    max-width: 1280px;
-    margin: auto;
-    padding: 15px;
-}
-
-/* Section title styles */
-.section-title {
-  font-size: 2rem;
-  text-align: center;
-  font-weight: bold;
-  color: #333;
-  margin: 10px 0;
-}
-
-/* Dashboard card list styles */
-.dashboard-card-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* Dashboard card styles */
-.dashboard-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-
-  /* Add more styles as needed */
-}
-
-.dashboard-card:hover {
-  transform: scale(1.05);
-}
-
-/* Customize DashboardEmpty component styles */
-.dashboard-empty {
-  text-align: center;
-  color: #777;
-  margin-top: 20px;
-}
-
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-  .dashboard-card-list {
-    justify-content: flex-start;
-  }
 }
 

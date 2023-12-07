@@ -1262,39 +1262,237 @@
         sessions: {},
     };
     var seedData = {
-        movies: {
-            "1240549d-f0e0-497e-ab99-eb8f703713d7": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "Black Widow",
-                description:
-                    "Natasha Romanoff aka Black Widow confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Comes on the screens 2020.",
-                img: "https://miro.medium.com/max/735/1*akkAa2CcbKqHsvqVusF3-w.jpeg",
-                _createdOn: 1614935055353,
-                _id: "1240549d-f0e0-497e-ab99-eb8f703713d7",
+        books: {
+            0: {
+                id: 0,
+                name: "Learn JavaScript from Scratch",
+                overview:
+                    "Master JavaScript fundamentals from the beginning with projects",
+                long_description:
+                    "This course starts from the basics and covers all key JavaScript concepts with hands-on projects. Includes ES6 features, DOM manipulation, AJAX, etc.",
+                price: 25,
+                poster: "https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10015.avif",
+                rating: 4.5,
+                in_stock: true,
+                size: 8,
+                best_seller: false,
             },
-            "143e5265-333e-4150-80e4-16b61de31aa0": {
-                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                title: "Wonder Woman 1984",
-                description:
-                    "Diana must contend with a work colleague and businessman, whose desire for extreme wealth sends the world down a path of destruction, after an ancient artifact that grants wishes goes missing.",
-                img: "https://pbs.twimg.com/media/ETINgKwWAAAyA4r.jpg",
-                _createdOn: 1614935181470,
-                _id: "143e5265-333e-4150-80e4-16b61de31aa0",
+            1: {
+                id: 1,
+                name: "Machine Learning with Python",
+                overview:
+                    "Practical ML techniques using Scikit-Learn and TensorFlow with Python",
+                long_description:
+                    "Master machine learning concepts + implementations using Python. Covers regression, classification, neural networks, deep learning and more with real-world examples.",
+                price: 50,
+                poster: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10014.avif",
+                rating: 5,
+                in_stock: true,
+                size: 12,
+                best_seller: true,
             },
-            "a9bae6d8-793e-46c4-a9db-deb9e3484909": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                title: "Top Gun 2",
-                description:
-                    "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
-                img: "https://i.pinimg.com/originals/f2/a4/58/f2a458048757bc6914d559c9e4dc962a.jpg",
-                _createdOn: 1614935268135,
-                _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909",
+            2: {
+                id: 2,
+                name: "Advanced React and Redux",
+                overview:
+                    "Master complex React apps and Redux state management",
+                long_description:
+                    "Take your React skills to the next level by learning hooks, context API, React Router, Redux and more with example fullstack apps",
+                price: 46,
+                poster: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10013.avif",
+                rating: 4.8,
+                in_stock: true,
+                size: 10,
+                best_seller: false,
+            },
+
+            3: {
+                id: 3,
+                name: "Rust Programming Language",
+                overview: "Learn Rust from scratch with real-world projects",
+                long_description:
+                    "Master Rust, including ownership, borrowing, lifetimes, traits, testing, and more. Build real-world apps like a weather CLI, a database engine, a web server, and mining tools.",
+                price: 30,
+                poster: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10012.avif",
+                rating: 4.8,
+                in_stock: true,
+                size: 8,
+                best_seller: false,
+            },
+            4: {
+                id: 4,
+                name: "Linux Device Drivers Development",
+                overview:
+                    "Master writing robust and secure device drivers for Linux kernel",
+                long_description:
+                    "Learn to develop custom Linux kernel modules, drivers, and filesystems. Covers kernel builds, kernel infrastructure, module development, driver development, debugging kernels and modules, and more.",
+                price: 40,
+                poster: "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10002.avif",
+                rating: 4.7,
+                in_stock: true,
+                size: 5,
+                best_seller: false,
+            },
+            5: {
+                id: 5,
+                name: "Advanced Data Structures and Algorithms",
+                overview:
+                    "Master complex data structures and algorithms in Python",
+                long_description:
+                    "Covers advanced Python implementations of trees, heaps, graphs, dynamic programming, backtracking, recursion, bit manipulation, and more with a focus on performance and optimization techniques.",
+                price: 25,
+                poster: "https://images.unsplash.com/photo-1623479322729-28b25c16b011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10010.avif",
+                rating: 4.8,
+                in_stock: true,
+                size: 6,
+                best_seller: false,
+            },
+
+            6: {
+                id: 6,
+                name: "Go Systems Programming",
+                overview: "Master systems-level programming with Go",
+                long_description:
+                    "Covers Go's systems programming capabilities for building highly scalable network servers, microservices, containers, Linux functionality, advanced concurrency patterns, and more.",
+                price: 30,
+                poster: "https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10009.avif",
+                rating: 4.9,
+                in_stock: true,
+                size: 8,
+                best_seller: false,
+            },
+
+            7: {
+                id: 7,
+                name: "Modern C++ Programming Cookbook",
+                overview: "Practical recipes for mastering modern C++17/20",
+                long_description:
+                    "Learn the latest C++ features like the STL, multithreading, lambdas, and more through 100+ examples. Covers game dev, emulators, computer vision apps, distributed systems, and other complex programs.",
+                price: 40,
+                poster: "https://images.unsplash.com/photo-1613490900233-141c5560d75d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10008.avif",
+                rating: 4.7,
+                in_stock: true,
+                size: 10,
+                best_seller: true,
+            },
+
+            8: {
+                id: 8,
+                name: "Advanced iOS Development",
+                overview: "Build real-world iOS apps with Swift and Xcode",
+                long_description:
+                    "Covers building complex iOS apps integrating with APIs, Core Data, animations, maps, camera, notifications and more. Includes building messaging, travel, ecommerce and social apps from scratch.",
+                price: 30,
+                poster: "https://images.unsplash.com/photo-1621839673705-6617adf9e890?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10007.avif",
+                rating: 4.8,
+                in_stock: true,
+                size: 12,
+                best_seller: false,
+            },
+            9: {
+                id: 9,
+                name: "Machine Learning with PyTorch",
+                overview:
+                    "Implement ML models and neural networks with PyTorch",
+                long_description:
+                    "Build neural networks, convolutional networks, RNNs and more from scratch. Covers computer vision, NLP models, reinforcement learning, GANs and applying ML to real world scenarios like fraud detection.",
+                price: 40,
+                poster: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10006.avif",
+                rating: 5,
+                in_stock: true,
+                size: 8,
+                best_seller: true,
+            },
+            10: {
+                id: 10,
+                name: "Advanced Database Systems",
+                overview: "Master complex database systems and modeling",
+                long_description:
+                    "Covers complex relational databases, NoSQL databases, graph databases, horzizontal/vertical scaling, sharding, replication, transactions, ACID compliance and more.",
+                price: 30,
+                poster: "https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10005.avif",
+                rating: 4.7,
+                in_stock: true,
+                size: 10,
+                best_seller: false,
+            },
+            11: {
+                id: 11,
+                name: "Advanced Web Development with React",
+                overview: "Master complex React web apps and integrations",
+                long_description:
+                    "Build large-scale React web apps integrating with REST APIs, Redux, React Router, authentication, GraphQL, unit testing, webpack, server-side rendering and continuous deployment.",
+                price: 25,
+                poster: "https://images.unsplash.com/photo-1595617795501-9661aafda72a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10004.avif",
+                rating: 4.9,
+                in_stock: true,
+                size: 6,
+                best_seller: false,
             },
         },
-        
+
+        featured_books: {
+            2: {
+                id: 2,
+                name: "Advanced React and Redux",
+                overview:
+                    "Master complex React apps and Redux state management",
+                long_description:
+                    "Take your React skills to the next level by learning hooks, context API, React Router, Redux and more with example fullstack apps",
+                price: 46,
+                poster: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10013.avif",
+                rating: 4.8,
+                in_stock: true,
+                size: 10,
+                best_seller: false,
+            },
+            5: {
+                id: 5,
+                name: "Advanced Data Structures and Algorithms",
+                overview:
+                    "Master complex data structures and algorithms in Python",
+                long_description:
+                    "Covers advanced Python implementations of trees, heaps, graphs, dynamic programming, backtracking, recursion, bit manipulation, and more with a focus on performance and optimization techniques.",
+                price: 25,
+                poster: "https://images.unsplash.com/photo-1623479322729-28b25c16b011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10010.avif",
+                rating: 4.8,
+                in_stock: true,
+                size: 6,
+                best_seller: false,
+            },
+            7: {
+                id: 7,
+                name: "Modern C++ Programming Cookbook",
+                overview: "Practical recipes for mastering modern C++17/20",
+                long_description:
+                    "Learn the latest C++ features like the STL, multithreading, lambdas, and more through 100+ examples. Covers game dev, emulators, computer vision apps, distributed systems, and other complex programs.",
+                price: 40,
+                poster: "https://images.unsplash.com/photo-1613490900233-141c5560d75d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+                image_local: "/assets/images/10008.avif",
+                rating: 4.7,
+                in_stock: true,
+                size: 10,
+                best_seller: true,
+            },
+        },
+
         orders: {},
     };
-    
+
     var settings = {
         identity: identity,
         protectedData: protectedData,

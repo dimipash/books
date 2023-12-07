@@ -3,6 +3,8 @@ import { useTitle } from "../../hooks/useTitle";
 import { DashboardCard } from "./components/DashboardCard";
 import { DashboardEmpty } from "./components/DashboardEmpty";
 import { getUserOrders } from "../../services";
+import styles from "./DashboardPage.module.css";
+
 import { toast } from "react-toastify";
 
 export const DashboardPage = () => {
@@ -25,14 +27,12 @@ export const DashboardPage = () => {
     }, []);
 
     return (
-        <main>
+        <main className={styles.main}>
             <section>
-                <p className="section-title dark:text-slate-100 underline underline-offset-8">
-                    My Dashboard
-                </p>
+                <h1 className={styles.sectionTitle}>My Dashboard</h1>
             </section>
 
-            <section className="dashboard-card-list">
+            <section className={styles.cardList}>
                 {orders &&
                     orders.map((order) => (
                         <DashboardCard
@@ -47,7 +47,7 @@ export const DashboardPage = () => {
                     ))}
             </section>
 
-            <section className="dashboard-empty">
+            <section>
                 {!orders.length && <DashboardEmpty />}
             </section>
         </main>

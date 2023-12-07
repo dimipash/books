@@ -9,7 +9,6 @@ import {
     OrderPage,
     DashboardPage,
     PageNotFound,
-    OrderEdit,
 } from "../pages";
 import { ProtectedRoute } from "./ProtectedRoute";
 
@@ -48,13 +47,7 @@ export const AllRoutes = () => {
                         </ProtectedRoute>
                     }
                 />
-                <Route path="orders/:id"
-                    element={
-                        <ProtectedRoute>
-                            <OrderEdit />
-                        </ProtectedRoute>
-                    }
-                />
+
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
         </>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const Hero = () => {
     return (
-        <section className="flex flex-col lg:flex-row dark:text-slate-100 items-center">
+        <section className="flex flex-col lg:flex-row dark:text-slate-100 items-center mb-10">
             <div className="text my-5">
                 <h1 className="text-5xl font-bold">E-Book Store</h1>
                 <p className="text-2xl my-7 px-1 dark:text-slate-300">
@@ -22,7 +22,7 @@ export const Hero = () => {
                 <img
                     className="rounded-lg max-h-full"
                     src="https://images.unsplash.com/photo-1623276527153-fa38c1616b05?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="CodeBook Hero Section"
+                    alt="EBook Hero Section"
                 />
             </div>
         </section>

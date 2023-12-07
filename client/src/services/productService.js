@@ -1,5 +1,5 @@
 export async function getProductList() {
-    const response = await fetch("http://localhost:3030/jsonstore/books/");
+    const response = await fetch("http://localhost:3030/data/books/");
     if (!response.ok) {
         throw { message: response.statusText, status: response.status }
     }
@@ -9,7 +9,7 @@ export async function getProductList() {
 }
 
 export async function getProduct(id) {
-    const response = await fetch(`http://localhost:3030/jsonstore/books/${id}`);
+    const response = await fetch(`http://localhost:3030/data/books/${id}`);
     if (!response.ok) {
         throw { message: response.statusText, status: response.status };
     }
@@ -20,7 +20,7 @@ export async function getProduct(id) {
 
 export async function getFeaturedList() {
     const response = await fetch(
-        "http://localhost:3030/jsonstore/featured_books/"
+        "http://localhost:3030/data/featured_books/"
     );
     if (!response.ok) {
         throw { message: response.statusText, status: response.status };

@@ -19,17 +19,3 @@ export async function deleteOrder(id) {
     }
 }
 
-export async function editOrder(id, updatedData) {
-    const token = JSON.parse(sessionStorage.getItem("token"));
-    const response = await fetch(`http://localhost:3030/data/orders/${id}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            "X-Authorization": token,
-        },
-        body: JSON.stringify(updatedData),
-    });
-    if (!response.ok) {
-        throw { message: response.statusText, status: response.status };
-    }
-}
