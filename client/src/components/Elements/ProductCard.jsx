@@ -17,39 +17,24 @@ export const ProductCard = ({ product }) => {
         best_seller,
     } = product;
 
-useEffect(() => {
-    // Check if cartList is truthy and an array
-    if (cartList?.length) {
-        const productInCart = cartList.find((item) => item.id === product.id);
+    useEffect(() => {
+        if (cartList?.length) {
+            const productInCart = cartList.find(
+                (item) => item.id === product.id
+            );
 
-        if (productInCart) {
-            setInCart(true);
+            if (productInCart) {
+                setInCart(true);
+            } else {
+                setInCart(false);
+            }
         } else {
             setInCart(false);
         }
-    } else {
-        setInCart(false);
-    }
-}, [cartList, product.id]);
-
-    // useEffect(() => {
-    //     const updatedCartList = cartList || [];
-
-    //     const productInCart = updatedCartList.find(
-    //         (item) => item.id === product.id
-    //     );
-
-    //     // const productInCart = cartList.find((item) => item.id === product.id);
-
-    //     if (productInCart) {
-    //         setInCart(true);
-    //     } else {
-    //         setInCart(false);
-    //     }
-    // }, [cartList, product.id]);
+    }, [cartList, product.id]);
 
     return (
-        <div className="m-2 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+        <div className="m-2 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md">
             <Link to={`/products/${id}`} className="relative">
                 {best_seller && (
                     <span className="absolute top-4 left-2 px-2 bg-orange-500 bg-opacity-90 text-white rounded">
@@ -64,11 +49,11 @@ useEffect(() => {
             </Link>
             <div className="p-5">
                 <Link to={`/products/${id}`}>
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
                         {name}
                     </h5>
                 </Link>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+                <p className="mb-3 font-normal text-gray-700">
                     {overview}
                 </p>
 
@@ -77,7 +62,7 @@ useEffect(() => {
                 </div>
 
                 <p className="flex justify-between items-center">
-                    <span className="text-2xl dark:text-gray-200">
+                    <span className="text-2xl">
                         <span>$</span>
                         <span>{price}</span>
                     </span>

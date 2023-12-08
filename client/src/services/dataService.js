@@ -6,7 +6,7 @@ function getSession() {
 }
 
 export async function getUserOrders() {
-    const { token, id, email } = getSession();
+    const { id } = getSession();
     const requestOptions = {
         method: "GET",
         headers: {

@@ -10,12 +10,12 @@ export const Accordion = ({ faq }) => {
                 <button
                     onClick={() => setShow(!show)}
                     type="button"
-                    className="text-lg flex items-center justify-between w-full py-5 font-medium text-left text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+                    className="text-lg flex items-center justify-between w-full py-5 font-medium text-left text-black border-b border-gray-200"
                     data-accordion-target="#accordion-flush-body-1"
                     aria-expanded="true"
                     aria-controls="accordion-flush-body-1"
                 >
-                    <span className="text-xl text-slate-900 dark:text-white">
+                    <span className="text-xl text-black">
                         {question}
                     </span>
                     {!show && (
@@ -56,8 +56,8 @@ export const Accordion = ({ faq }) => {
                     className=""
                     aria-labelledby="accordion-flush-heading-1"
                 >
-                    <div className="py-5 border-b border-gray-200 dark:border-gray-700">
-                        <p className="text-lg mb-2 text-gray-500 dark:text-gray-400">
+                    <div className="py-5 border-b border-gray-200 ">
+                        <p className="text-lg mb-2 ml-2 text-black">
                             {answer}
                         </p>
                     </div>

@@ -7,8 +7,11 @@ export const PageNotFound = () => {
         <main>
             <section className="flex flex-col justify-center px-2">
                 <div className="flex flex-col items-center my-4">
-                    <p className="text-7xl text-black font-bold my-10 text-center">
-                        404, Page Not Found!
+                    <p className="text-7xl text-black font-bold my-1 text-center">
+                        404
+                    </p>
+                    <p className="text-5xl text-black font-bold my-10 text-center">
+                        Page Not Found
                     </p>
                 </div>
                 <div className="flex justify-center my-4">

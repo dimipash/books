@@ -12,7 +12,7 @@ export const DashboardCard = ({ order, onDelete }) => {
         if (hasConfirmed) {
             try {
                 await deleteOrder(order._id);
-                toast.success("Order deleted", { autoClose: 5000 });
+                toast.success("Order deleted", { autoClose: 4000 });
                 onDelete();
             } catch (error) {
                 toast.error(error.message);

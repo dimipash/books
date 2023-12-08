@@ -1,5 +1,3 @@
-
-
 export async function deleteOrder(id) {
     const token = JSON.parse(sessionStorage.getItem("token"));
     const response = await fetch(`http://localhost:3030/data/orders/${id}`, {

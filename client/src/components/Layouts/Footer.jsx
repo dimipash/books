@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
     return (
-        <footer className="bg-white shadow dark:bg-gray-800">
+        <footer className="bg-white shadow">
             <div className="p-4 mx-auto max-w-screen-xl md:flex md:items-center md:justify-between md:p-6">
-                <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                <span className="text-sm text-gray-500 sm:text-center">
                     © 2023{" "}
                     <Link to="/" className="hover:underline">
                         EBooks
@@ -16,7 +16,7 @@ export const Footer = () => {
                         to="/"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                        className="text-gray-500 hover:text-gray-900"
                     >
                         <svg
                             className="w-5 h-5"
@@ -36,7 +36,7 @@ export const Footer = () => {
                         to="/"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                        className="text-gray-500 hover:text-gray-900"
                     >
                         <svg
                             className="w-5 h-5"
@@ -52,7 +52,7 @@ export const Footer = () => {
                         to="/"
                         target="_blank"
                         rel="noreferrer"
-                        className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                        className="text-gray-500 hover:text-gray-900"
                     >
                         <svg
                             className="w-5 h-5"

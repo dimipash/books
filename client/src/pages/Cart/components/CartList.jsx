@@ -10,7 +10,7 @@ export const CartList = () => {
     return (
         <>
             <section>
-                <p className="text-2xl text-center font-semibold dark:text-slate-100 my-10 underline underline-offset-8">
+                <p className="text-2xl text-center font-semibold my-10 underline underline-offset-8">
                     My Cart ({cartList.length})
                 </p>
             </section>
@@ -22,17 +22,17 @@ export const CartList = () => {
             </section>
 
             <section className="max-w-4xl m-auto">
-                <div className="flex flex-col p-2 border-b dark:border-slate-700 text-lg dark:text-slate-100">
+                <div className="flex flex-col p-2 border-b text-lg">
                     <p className="flex justify-between my-2">
-                        <span className="font-semibold">Total Amount:</span>
-                        <span>${total}</span>
+                        <span className="font-bold">Total Amount:</span>
+                        <span className="font-bold">${total}</span>
                     </p>
                 </div>
                 <div className="text-right my-5">
                     <button
                         onClick={() => setCheckout(true)}
                         type="button"
-                        className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 mt-3 dark:bg-blue-600 dark:hover:bg-blue-700"
+                        className="text-white bg-blue-700 hover:bg-green-800 font-medium rounded-lg text-base px-5 py-2.5 mr-2 mb-2 mt-4"
                     >
                         PLACE ORDER <i className="ml-2 bi bi-arrow-right"></i>
                     </button>

@@ -53,7 +53,7 @@ export const ProductDetail = () => {
                         />
                     </div>
                     <div className="max-w-xl my-3">
-                        <p className="text-3xl font-bold text-gray-900 dark:text-slate-200">
+                        <p className="text-3xl font-bold text-black">
                             <span className="mr-1">$</span>
                             <span className="">{product.price}</span>
                         </p>
@@ -118,7 +118,7 @@ export const ProductDetail = () => {
                             )}
                         </p>
 
-                        <p className="text-lg text-gray-900 dark:text-slate-200">
+                        <p className="text-lg text-black">
                             {product.long_description}
                         </p>
                     </div>

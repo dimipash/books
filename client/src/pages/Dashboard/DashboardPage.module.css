@@ -8,11 +8,7 @@
     font-size: 26px;
     text-align: center;
     font-weight: 800;
-    color: black;
-    font-weight: 1000;
-    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    text-decoration: underline;
+    color: black;       
     text-underline-offset: 8px;
     margin-bottom: 1.5rem;
 }

@@ -4,7 +4,7 @@ import { useCart } from "../../../context";
 export const CartCard = ({ product }) => {
     const { removeFromCart } = useCart();
     return (
-        <div className="flex flex-wrap justify-between border-b dark:border-slate-700 max-w-4xl m-auto p-2 mb-5 ">
+        <div className="flex flex-wrap justify-between border-b max-w-4xl m-auto p-2 mb-5 ">
             <div className="flex">
                 <a href="">
                     <img
@@ -15,16 +15,16 @@ export const CartCard = ({ product }) => {
                 </a>
                 <div className="">
                     <Link to={`products/${product.id}`}>
-                        <p className="text-lg ml-2 dark:text-slate-200">
+                        <p className="text-lg ml-2">
                             {product.name}
                         </p>
                     </Link>
-                    <button onClick={() => removeFromCart(product)} className="text-base ml-2 text-red-400">
+                    <button onClick={() => removeFromCart(product)} className="text-lg ml-2 text-red-600">
                         Remove
                     </button>
                 </div>
             </div>
-            <div className="text-lg m-2 dark:text-slate-200">
+            <div className="text-lg m-2">
                 <span>${product.price}</span>
             </div>
         </div>
