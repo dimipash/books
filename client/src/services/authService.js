@@ -5,7 +5,7 @@ export async function login(authDetail) {
         body: JSON.stringify(authDetail),
     };
     const response = await fetch(
-        "http://localhost:3030/users/login",
+        `${import.meta.env.VITE_APP_BACKEND_URL}/users/login`,
         requestOptions
     );
     if (!response.ok) {
@@ -30,7 +30,7 @@ export async function register(authDetail) {
     };
 
     const response = await fetch(
-        "http://localhost:3030/users/register",
+        `${import.meta.env.VITE_APP_BACKEND_URL}/users/register`,
         requestOptions
     );
     if (!response.ok) {

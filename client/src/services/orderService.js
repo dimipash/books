@@ -1,6 +1,6 @@
 export async function deleteOrder(id) {
     const token = JSON.parse(sessionStorage.getItem("token"));
-    const response = await fetch(`http://localhost:3030/data/orders/${id}`, {
+    const response = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/data/orders/${id}`, {
         method: "DELETE",
         headers: {
             "X-Authorization": token,
@@ -16,4 +16,3 @@ export async function deleteOrder(id) {
         };
     }
 }
-

@@ -13,7 +13,7 @@ export async function getUserOrders() {
             "Content-Type": "application/json",
         },
     };
-    const response = await fetch(`http://localhost:3030/data/orders`, requestOptions);
+    const response = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/data/orders`, requestOptions);
      if (!response.ok) {
          throw { message: response.statusText, status: response.status };
      }
@@ -43,7 +43,7 @@ export async function createOrder(cartList, total) {
         },
         body: JSON.stringify(order),
     };
-    const response = await fetch("http://localhost:3030/data/orders", requestOptions);
+    const response = await fetch(`${import.meta.env.VITE_APP_BACKEND_URL}/data/orders`, requestOptions);
     if (!response.ok) {
         throw { message: response.statusText, status: response.status };
     }
