@@ -1,0 +1,43 @@
+{
+    "featured_books": {
+        "2": {
+            "id": 2,
+            "name": "Advanced React and Redux",
+            "overview": "Master complex React apps and Redux state management",
+            "long_description": "Take your React skills to the next level by learning hooks, context API, React Router, Redux and more with example fullstack apps",
+            "price": 46,
+            "poster": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+            "image_local": "/assets/images/10013.avif",
+            "rating": 4.8,
+            "in_stock": true,
+            "size": 10,
+            "best_seller": false
+        },
+        "5": {
+            "id": 5,
+            "name": "Advanced Data Structures and Algorithms",
+            "overview": "Master complex data structures and algorithms in Python",
+            "long_description": "Covers advanced Python implementations of trees, heaps, graphs, dynamic programming, backtracking, recursion, bit manipulation, and more with a focus on performance and optimization techniques.",
+            "price": 25,
+            "poster": "https://images.unsplash.com/photo-1623479322729-28b25c16b011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+            "image_local": "/assets/images/10010.avif",
+            "rating": 4.8,
+            "in_stock": true,
+            "size": 6,
+            "best_seller": false
+        },
+        "7": {
+            "id": 7,
+            "name": "Modern C++ Programming Cookbook",
+            "overview": "Practical recipes for mastering modern C++17/20",
+            "long_description": "Learn the latest C++ features like the STL, multithreading, lambdas, and more through 100+ examples. Covers game dev, emulators, computer vision apps, distributed systems, and other complex programs.",
+            "price": 40,
+            "poster": "https://images.unsplash.com/photo-1613490900233-141c5560d75d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=650&q=40",
+            "image_local": "/assets/images/10008.avif",
+            "rating": 4.7,
+            "in_stock": true,
+            "size": 10,
+            "best_seller": true
+        }
+    }
+}
