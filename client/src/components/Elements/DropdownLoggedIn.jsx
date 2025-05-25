@@ -15,7 +15,7 @@ export const DropdownLoggedIn = ({ setDropdown }) => {
         <div
             
             id="dropdownAvatar"
-            className="select-none outline outline-1 outline-black absolute top-10 right-0 z-10 w-44 bg-gray-100 rounded-lg divide-y divide-gray-100 shadow mr-2"
+            className="select-none outline outline-1 outline-black absolute top-10 right-2 z-10 w-44 bg-gray-100 rounded-lg divide-y divide-gray-100 shadow"
         >
             <div className="py-3 px-4 text-sm text-black">
                 <div className="font-medium truncate">{email}</div>
